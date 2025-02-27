@@ -1,3 +1,15 @@
+import subprocess
+import sys
+
+# Install missing dependencies
+def install_packages():
+    packages = ["PyPDF2", "python-docx"]
+    for package in packages:
+        subprocess.run([sys.executable, "-m", "pip", "install", package])
+
+install_packages()
+
+
 import streamlit as st
 from PyPDF2 import PdfReader
 from docx import Document
